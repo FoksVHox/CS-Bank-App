@@ -46,7 +46,7 @@ namespace TestSolution.Objects
         /*
          * Creates an account for a customer.
          */
-        public Account createAccount(Customer cus, string type)
+        public Account CreateAccount(Customer cus, string type)
         {
             Account acc = new Account(cus, type);
             Accounts.Add(acc);

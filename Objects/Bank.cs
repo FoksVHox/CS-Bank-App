@@ -38,7 +38,7 @@ namespace TestSolution.Objects
         /*
          * Creates a customer
          */
-        public Customer createCustomer(string name, string type)
+        public Customer CreateCustomer(string name, string type)
         {
             Customer cus = new Customer(name, type);
             Customers.Add(cus);

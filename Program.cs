@@ -10,10 +10,10 @@ namespace TestSolution
         
         static void Main()
         {
-            Bank bank = createBank("TestCorp Banking");
-            Customer cus = bank.createCustomer("Test", "Individual");
-            Account acc = cus.createAccount(cus, "Pension");
-            Transaction t = acc.createTransaction("test transaction", 20.78);
+            Bank bank = CreateBank("TestCorp Banking");
+            Customer cus = bank.CreateCustomer("Test", "Individual");
+            Account acc = cus.CreateAccount(cus, "Pension");
+            Transaction t = acc.CreateTransaction("test transaction", 20.78);
             
             
             Console.WriteLine("Bank name: "+bank.Name);
@@ -26,14 +26,14 @@ namespace TestSolution
             Console.WriteLine("Transaction message: "+t.Message);
             Console.WriteLine("Transaction Amount: "+t.Amount);
             Console.WriteLine("Transaction ID: " + t.Id);
-            Transaction t1 = acc.createTransaction("test transaction", -40.83);
+            Transaction t1 = acc.CreateTransaction("test transaction", -40.83);
             Console.WriteLine("New Account Balance: "+acc.Balance);
         }
 
         /*
          * Creates a bank
          */
-        static Bank createBank(string name)
+        static Bank CreateBank(string name)
         {
             Bank bank = new Bank(name);
             Banks.Add(bank);
