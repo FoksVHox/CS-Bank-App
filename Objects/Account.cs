@@ -72,12 +72,24 @@ namespace TestSolution.Objects
         /*
          * Creates a transaction, and 
          */
-        public Transaction createTransaction(string message, double amount)
+        public Transaction CreateTransaction(string message, double amount)
         {
             Transaction transaction = new Transaction(message, amount);
             Transactions.Add(transaction);
             Balance = Balance + amount;
             return transaction;
+        }
+        
+        /*
+         * Creates a transfer and addeds the money to the other account.
+         */
+        public Transaction[] CreateTransfer(Account from, Account to, double amount)
+        {
+            Transaction fromTransaction = from.CreateTransaction("Money transfer to "+to.Name, -amount);
+            Transaction toTransaction = to.CreateTransaction("Money transfer from "+from.Name, amount);
+            
+            Transaction[] transactions = {fromTransaction, toTransaction};
+            return transactions;
         }
     }
 }
